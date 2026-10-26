@@ -1,0 +1,6 @@
+[project]
+name = "rpa-n8n-python"
+version = "1.0.0"
+description = "Briefing educativo com dados ficticios, Python e n8n"
+requires-python = ">=3.11"
+dependencies = []

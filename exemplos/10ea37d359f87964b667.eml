@@ -1,0 +1,62 @@
+From: rpa@example.com
+To: revisao@example.com
+Subject: [DEMO] Briefing educativo =?utf-8?q?=E2=80=94_dados_fict=C3=ADcios?=
+Message-ID: <10ea37d359f87964b667@rpa.local>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============0174041974134789095=="
+
+--===============0174041974134789095==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+DADOS FICT=C3=8DCIOS. Material educativo; n=C3=A3o representa cota=C3=A7=C3=
+=A3o, not=C3=ADcia real ou recomenda=C3=A7=C3=A3o de investimento.
+
+Resumo da carteira de demonstra=C3=A7=C3=A3o
+Custo total: BRL 350.00
+Valor de refer=C3=AAncia fict=C3=ADcio: BRL 355.00
+Varia=C3=A7=C3=A3o simulada: BRL 5.00 (1.43%)
+
+Not=C3=ADcias sint=C3=A9ticas para teste:
+- Empresa fict=C3=ADcia FICT3 apresenta resultado de treinamento: Not=C3=ADci=
+a inventada exclusivamente para testar a consolida=C3=A7=C3=A3o de informa=C3=
+=A7=C3=B5es. Fonte: Fixture local do projeto; sem rela=C3=A7=C3=A3o com fatos=
+ de mercado.
+- Empresa fict=C3=ADcia DEMO4 divulga comunicado de demonstra=C3=A7=C3=A3o: C=
+onte=C3=BAdo sint=C3=A9tico para validar a montagem do briefing; n=C3=A3o =C3=
+=A9 not=C3=ADcia real. Fonte: Fixture local do projeto; sem rela=C3=A7=C3=A3o=
+ com fatos de mercado.
+
+Pr=C3=B3xima etapa: revisar os dados e o briefing antes de qualquer uso.
+
+--===============0174041974134789095==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<!doctype html><html lang=3D"pt-BR"><meta charset=3D"utf-8"><title>Briefing e=
+ducativo =E2=80=94 dados fict=C3=ADcios</title><body><h1>Briefing de demonstr=
+a=C3=A7=C3=A3o</h1><pre style=3D"white-space:pre-wrap;font:16px/1.5 sans-seri=
+f">DADOS FICT=C3=8DCIOS. Material educativo; n=C3=A3o representa cota=C3=A7=
+=C3=A3o, not=C3=ADcia real ou recomenda=C3=A7=C3=A3o de investimento.
+
+Resumo da carteira de demonstra=C3=A7=C3=A3o
+Custo total: BRL 350.00
+Valor de refer=C3=AAncia fict=C3=ADcio: BRL 355.00
+Varia=C3=A7=C3=A3o simulada: BRL 5.00 (1.43%)
+
+Not=C3=ADcias sint=C3=A9ticas para teste:
+- Empresa fict=C3=ADcia FICT3 apresenta resultado de treinamento: Not=C3=ADci=
+a inventada exclusivamente para testar a consolida=C3=A7=C3=A3o de informa=C3=
+=A7=C3=B5es. Fonte: Fixture local do projeto; sem rela=C3=A7=C3=A3o com fatos=
+ de mercado.
+- Empresa fict=C3=ADcia DEMO4 divulga comunicado de demonstra=C3=A7=C3=A3o: C=
+onte=C3=BAdo sint=C3=A9tico para validar a montagem do briefing; n=C3=A3o =C3=
+=A9 not=C3=ADcia real. Fonte: Fixture local do projeto; sem rela=C3=A7=C3=A3o=
+ com fatos de mercado.
+
+Pr=C3=B3xima etapa: revisar os dados e o briefing antes de qualquer uso.</pre=
+></body></html>
+
+--===============0174041974134789095==--

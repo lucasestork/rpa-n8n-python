@@ -1,0 +1,17 @@
+{
+  "origem": "ficticia",
+  "itens": [
+    {
+      "id": "demo-01",
+      "titulo": "Empresa fictícia FICT3 apresenta resultado de treinamento",
+      "resumo": "Notícia inventada exclusivamente para testar a consolidação de informações.",
+      "fonte": "Fixture local do projeto; sem relação com fatos de mercado."
+    },
+    {
+      "id": "demo-02",
+      "titulo": "Empresa fictícia DEMO4 divulga comunicado de demonstração",
+      "resumo": "Conteúdo sintético para validar a montagem do briefing; não é notícia real.",
+      "fonte": "Fixture local do projeto; sem relação com fatos de mercado."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "origem": "ficticia",
+  "data_referencia": "2026-10-25",
+  "moeda": "BRL",
+  "posicoes": [
+    {
+      "ticker": "FICT3",
+      "quantidade": 10,
+      "preco_medio": "20.00",
+      "preco_referencia": "22.00"
+    },
+    {
+      "ticker": "DEMO4",
+      "quantidade": 5,
+      "preco_medio": "30.00",
+      "preco_referencia": "27.00"
+    }
+  ]
+}

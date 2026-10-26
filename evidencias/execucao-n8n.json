@@ -1,0 +1,58 @@
+{
+  "n8n_version": "2.22.6",
+  "python_version": "3.13.5",
+  "status": "success",
+  "finished": true,
+  "started_at_utc": "2026-10-26T01:22:07.120Z",
+  "stopped_at_utc": "2026-10-26T01:22:07.830Z",
+  "last_node": "Conferir resultado sem envio",
+  "nodes_executed": [
+    {
+      "name": "Início manual",
+      "status": "success"
+    },
+    {
+      "name": "Contexto demo",
+      "status": "success"
+    },
+    {
+      "name": "Analisar carteira em Python",
+      "status": "success"
+    },
+    {
+      "name": "Obter notícias sintéticas",
+      "status": "success"
+    },
+    {
+      "name": "Unir análise e notícias",
+      "status": "success"
+    },
+    {
+      "name": "Validar contexto unido",
+      "status": "success"
+    },
+    {
+      "name": "Gerar briefing e email local",
+      "status": "success"
+    },
+    {
+      "name": "Conferir resultado sem envio",
+      "status": "success"
+    }
+  ],
+  "output": {
+    "status": "pronto_para_revisao",
+    "id": "10ea37d359f87964b667",
+    "modo": "demo",
+    "gerado_por": "template_deterministico",
+    "enviado": false,
+    "reutilizado": false,
+    "arquivos": {
+      "json": "10ea37d359f87964b667.json",
+      "email": "10ea37d359f87964b667.eml",
+      "html": "10ea37d359f87964b667.html"
+    },
+    "texto": "DADOS FICTÍCIOS. Material educativo; não representa cotação, notícia real ou recomendação de investimento.\n\nResumo da carteira de demonstração\nCusto total: BRL 350.00\nValor de referência fictício: BRL 355.00\nVariação simulada: BRL 5.00 (1.43%)\n\nNotícias sintéticas para teste:\n- Empresa fictícia FICT3 apresenta resultado de treinamento: Notícia inventada exclusivamente para testar a consolidação de informações. Fonte: Fixture local do projeto; sem relação com fatos de mercado.\n- Empresa fictícia DEMO4 divulga comunicado de demonstração: Conteúdo sintético para validar a montagem do briefing; não é notícia real. Fonte: Fixture local do projeto; sem relação com fatos de mercado.\n\nPróxima etapa: revisar os dados e o briefing antes de qualquer uso."
+  },
+  "scope": "CLI em base isolada; dados fictícios; sem envio de e-mail"
+}

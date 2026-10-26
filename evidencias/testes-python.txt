@@ -1,0 +1,21 @@
+test_demo_never_calls_llm (test_rpa.BriefingTests.test_demo_never_calls_llm) ... ok
+test_html_escaping_and_email_structure (test_rpa.BriefingTests.test_html_escaping_and_email_structure) ... ok
+test_idempotency_reuses_artifacts (test_rpa.BriefingTests.test_idempotency_reuses_artifacts) ... ok
+test_llm_failure_has_no_silent_fallback (test_rpa.BriefingTests.test_llm_failure_has_no_silent_fallback) ... ok
+test_missing_analysis_rejected (test_rpa.BriefingTests.test_missing_analysis_rejected) ... ok
+test_ollama_http_contract_with_fake_server (test_rpa.BriefingTests.test_ollama_http_contract_with_fake_server) ... ok
+test_remote_ollama_not_allowed (test_rpa.BriefingTests.test_remote_ollama_not_allowed) ... ok
+test_demo_source_required (test_rpa.DomainTests.test_demo_source_required) ... ok
+test_expected_decimal_totals (test_rpa.DomainTests.test_expected_decimal_totals) ... ok
+test_non_finite_and_non_positive_values (test_rpa.DomainTests.test_non_finite_and_non_positive_values) ... ok
+test_reject_boolean_quantity (test_rpa.DomainTests.test_reject_boolean_quantity) ... ok
+test_reject_duplicate_tickers (test_rpa.DomainTests.test_reject_duplicate_tickers) ... ok
+test_api_end_to_end_and_replay (test_rpa.HttpTests.test_api_end_to_end_and_replay) ... ok
+test_invalid_json_and_unsupported_media (test_rpa.HttpTests.test_invalid_json_and_unsupported_media) ... ok
+test_preview_requires_generated_id (test_rpa.HttpTests.test_preview_requires_generated_id) ... ok
+test_unknown_route (test_rpa.HttpTests.test_unknown_route) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 2.892s
+
+OK

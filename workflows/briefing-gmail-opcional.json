@@ -1,0 +1,275 @@
+{
+  "id": "RpaDioGmail2026",
+  "name": "RPA educativo — Gmail opcional DESABILITADO",
+  "nodes": [
+    {
+      "name": "Início manual",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {},
+      "id": "rpa-node-01"
+    },
+    {
+      "name": "Webhook local",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        220
+      ],
+      "webhookId": "164aacac-f4b3-4359-87e4-52a715a53f12",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "rpa-briefing-demo",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "rpa-node-02"
+    },
+    {
+      "name": "Contexto demo",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        80
+      ],
+      "parameters": {
+        "jsCode": "return [{json:{origem:'ficticia',modo:'demonstracao'}}];"
+      },
+      "id": "rpa-node-03"
+    },
+    {
+      "name": "Analisar carteira em Python",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        0
+      ],
+      "parameters": {
+        "url": "http://127.0.0.1:8765/api/analise",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "rpa-node-04"
+    },
+    {
+      "name": "Obter notícias sintéticas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        220
+      ],
+      "parameters": {
+        "url": "http://127.0.0.1:8765/api/noticias",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "rpa-node-05"
+    },
+    {
+      "name": "Unir análise e notícias",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        750,
+        80
+      ],
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "id": "rpa-node-06"
+    },
+    {
+      "name": "Validar contexto unido",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1000,
+        80
+      ],
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nif (data.carteira?.origem !== 'ficticia' || data.noticias?.origem !== 'ficticia') throw new Error('Contexto incompleto ou fora da demonstracao');\nreturn [{json:{carteira:data.carteira,noticias:data.noticias}}];"
+      },
+      "id": "rpa-node-07"
+    },
+    {
+      "name": "Gerar briefing e email local",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1250,
+        80
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8765/api/briefing",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "timeout": 90000
+        }
+      },
+      "id": "rpa-node-08"
+    },
+    {
+      "name": "Conferir resultado sem envio",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1500,
+        80
+      ],
+      "parameters": {
+        "jsCode": "const r = $input.first().json;\nif (r.status !== 'pronto_para_revisao' || r.enviado !== false || !r.arquivos?.email) throw new Error('Briefing nao confirmado');\nreturn [{json:{status:r.status,id:r.id,modo:r.modo,gerado_por:r.gerado_por,enviado:r.enviado,reutilizado:r.reutilizado,arquivos:r.arquivos,texto:r.texto}}];"
+      },
+      "id": "rpa-node-09"
+    },
+    {
+      "id": "rpa-gmail-opcional",
+      "name": "Gmail opcional — revisar antes de habilitar",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1750,
+        80
+      ],
+      "disabled": true,
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "sendTo": "revisao@example.com",
+        "subject": "[DEMO] Briefing educativo — dados fictícios",
+        "emailType": "text",
+        "message": "={{ $json.texto }}",
+        "options": {
+          "appendAttribution": false
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Início manual": {
+      "main": [
+        [
+          {
+            "node": "Contexto demo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook local": {
+      "main": [
+        [
+          {
+            "node": "Contexto demo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contexto demo": {
+      "main": [
+        [
+          {
+            "node": "Analisar carteira em Python",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Obter notícias sintéticas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analisar carteira em Python": {
+      "main": [
+        [
+          {
+            "node": "Unir análise e notícias",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Obter notícias sintéticas": {
+      "main": [
+        [
+          {
+            "node": "Unir análise e notícias",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Unir análise e notícias": {
+      "main": [
+        [
+          {
+            "node": "Validar contexto unido",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar contexto unido": {
+      "main": [
+        [
+          {
+            "node": "Gerar briefing e email local",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gerar briefing e email local": {
+      "main": [
+        [
+          {
+            "node": "Conferir resultado sem envio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Conferir resultado sem envio": {
+      "main": [
+        [
+          {
+            "node": "Gmail opcional — revisar antes de habilitar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Sao_Paulo"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}

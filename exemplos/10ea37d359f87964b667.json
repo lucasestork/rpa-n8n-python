@@ -1,0 +1,16 @@
+{
+  "status": "pronto_para_revisao",
+  "id": "10ea37d359f87964b667",
+  "modo": "demo",
+  "gerado_por": "template_deterministico",
+  "modelo": null,
+  "origem_dados": "ficticia",
+  "enviado": false,
+  "gerado_em": "2026-10-26T01:22:07.807395+00:00",
+  "texto": "DADOS FICTÍCIOS. Material educativo; não representa cotação, notícia real ou recomendação de investimento.\n\nResumo da carteira de demonstração\nCusto total: BRL 350.00\nValor de referência fictício: BRL 355.00\nVariação simulada: BRL 5.00 (1.43%)\n\nNotícias sintéticas para teste:\n- Empresa fictícia FICT3 apresenta resultado de treinamento: Notícia inventada exclusivamente para testar a consolidação de informações. Fonte: Fixture local do projeto; sem relação com fatos de mercado.\n- Empresa fictícia DEMO4 divulga comunicado de demonstração: Conteúdo sintético para validar a montagem do briefing; não é notícia real. Fonte: Fixture local do projeto; sem relação com fatos de mercado.\n\nPróxima etapa: revisar os dados e o briefing antes de qualquer uso.",
+  "arquivos": {
+    "json": "10ea37d359f87964b667.json",
+    "email": "10ea37d359f87964b667.eml",
+    "html": "10ea37d359f87964b667.html"
+  }
+}
